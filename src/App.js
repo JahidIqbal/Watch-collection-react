@@ -6,10 +6,15 @@ import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Explore from './Components/Explore/Explore';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
+
+
 
 function App() {
   return (
     <div className="App">
+
       <Router>
         <Navbar></Navbar>
         <Switch>
@@ -25,10 +30,17 @@ function App() {
           <Route path="/explore">
             <Explore></Explore>
           </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
 
         </Switch>
         <Footer></Footer>
       </Router>
+
 
     </div>
   );

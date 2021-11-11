@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import brandicon from '../../images/watch.png'
 
 const Navbar = () => {
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-dark  ">
@@ -19,7 +20,10 @@ const Navbar = () => {
                             <Link className="nav-link active text-white" aria-current="page" to="/">Home</Link>
                             <Link className="nav-link active text-white " to="/explore">Explore</Link>
                             <Link className="nav-link active text-white" to="/">Dashboard</Link>
-                            <Link className="nav-link active text-white" to="/">Login</Link>
+
+
+                            <Link to="/login" className="nav-link text-white">Login</Link>
+
                         </div>
                     </div>
                 </div>
