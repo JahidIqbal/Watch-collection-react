@@ -1,52 +1,63 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import './Login.css'
+import React, { useState } from 'react';
+import { Link, useLocation, useHistory } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
-    const { register, reset, handleSubmit, formState: { errors }, } = useForm();
-    // const onSubmit = data => console.log(data);
+    const [loginData, setLoginData] = useState({});
+    const { user, loginUser, isLoading, authError } = useAuth();
 
-    const onSubmit = (data) => {
-        alert('okay')
-        reset();
+    const location = useLocation();
+    const history = useHistory()
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
     }
 
-    // const history = useHistory()
-    // const location = useLocation()
-
-    // const url = location?.state?.from || "/home"
-
+    const handleLoginSubmit = e => {
+        loginUser(loginData.email, loginData.password, location, history);
+        e.preventDefault();
+    }
     return (
-        <div className="container w-75 bg-dark">
+        <div className="container mt-4 bg-dark w-50">
             <h3 className="mt-5 text-center text-info fw-bolder ">Login Form</h3>
-            <div className="login-box ">
-                <div className="  d-flex justify-content-center align-items-center  ">
-                    <div className="login-form mt-4 w-50">
-                        <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleLoginSubmit}>
+                <input
+                    style={{ width: '100%' }}
+                    label="Your Email"
+                    name="email"
+                    placeholder="Your Email"
+                    onBlur={handleOnChange}
+                />
+                <br />
+                <input className="mt-4"
+                    style={{ width: '100%' }}
+                    label="Your Password"
+                    type="password"
+                    name="password"
+                    placeholder="Your Password"
+                    onBlur={handleOnChange} />
+                <br />
+                <button className="btn btn-info mt-2 mb-2" type="submit">Login</button>
+                {isLoading && <div className="spinner-border text-info text-center" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>}
+                {user?.email && <div className="alert alert-success" role="alert">
+                    User created successFully!
+                </div>}
+                {authError && <div class="alert alert-danger" role="alert">
+                    {authError}
+                </div>}
 
-                            <input name="email" type="email" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                placeholder="Your Email" />
-                            {/* value={user.email} */}
-                            <br />
-
-                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} placeholder="Your password" />
-
-                            <br />
-                            {errors.exampleRequired && <span>This field is required</span>}
+                <p className="text-white fw-bolder">New User? Please <Link className="text-decoration-none text-info" to="/register">Register</Link></p>
+            </form>
 
 
-                            <input type="submit" value="Login" className="btn btn-info w-50" />
-                        </form>
-                        <div className="mt-4">
-                            <p className="text-white">New to JI Watch? <Link className="text-decoration-none text-info" to="/register">Create Account</Link></p>
-                        </div>
 
-                    </div>
-
-                </div>
-            </div>
         </div>
     );
 };

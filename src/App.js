@@ -8,6 +8,8 @@ import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Explore from './Components/Explore/Explore';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import AuthProvider from './Contexts/AuthProvider/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 
@@ -15,32 +17,34 @@ function App() {
   return (
     <div className="App">
 
-      <Router>
-        <Navbar></Navbar>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/buynow/:id">
-            <ServiceDetails></ServiceDetails>
-          </Route>
-          <Route path="/explore">
-            <Explore></Explore>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="/register">
-            <Register></Register>
-          </Route>
+      <AuthProvider>
+        <Router>
+          <Navbar></Navbar>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <PrivateRoute path="/buynow/:id">
+              <ServiceDetails></ServiceDetails>
+            </PrivateRoute>
+            <Route path="/explore">
+              <Explore></Explore>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
 
-        </Switch>
-        <Footer></Footer>
-      </Router>
+          </Switch>
+          <Footer></Footer>
+        </Router>
 
+      </AuthProvider>
 
     </div>
   );

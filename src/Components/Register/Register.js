@@ -1,55 +1,76 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Register.css'
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-    const { register, reset, handleSubmit, formState: { errors }, } = useForm();
-    // const onSubmit = data => console.log(data);
+    const [loginData, setLoginData] = useState({});
+    const { user, registerUser, isLoading, authError } = useAuth();
 
-    const onSubmit = (data) => {
-        alert('register done')
-        reset();
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
     }
-    // const history = useHistory()
-    // const location = useLocation()
 
-    // const url = location?.state?.from || "/home"
-
+    const handleLoginSubmit = e => {
+        if (loginData.password !== loginData.password2) {
+            alert('Your password did not match')
+            return
+        }
+        registerUser(loginData.email, loginData.password);
+        e.preventDefault();
+    }
     return (
-        <div className="container w-75 bg-dark">
+        <div className="container mt-4 bg-dark w-50">
             <h3 className="mt-5 text-center text-info fw-bolder ">Register Form</h3>
-            <div className="login-box ">
-                <div className="  d-flex justify-content-center align-items-center  ">
-                    <div className="login-form mt-4 w-50">
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <input name="name" type="name" {...register('name')} className={`form-control ${errors.name ? 'is-invalid' : ''}`} placeholder="Your name" />
-                            <br />
+            {
+                !isLoading && <form onSubmit={handleLoginSubmit}>
+                    <input
+                        style={{ width: '100%' }}
+                        label="Your Email"
+                        name="email"
+                        type="email"
+                        placeholder="Your Email"
+                        onBlur={handleOnChange}
+                        required
+                    />
+                    <br />
+                    <input className="mt-4"
+                        style={{ width: '100%' }}
+                        label="Your Password"
+                        type="password"
+                        name="password"
+                        placeholder="Your Password"
+                        onBlur={handleOnChange} />
+                    <br />
 
-                            <input name="email" type="email" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                placeholder="Your Email" />
-                            {/* value={user.email} */}
-                            <br />
+                    <input className="mt-4"
+                        style={{ width: '100%' }}
+                        label="ReType Your Password"
+                        type="password"
+                        name="password2"
+                        placeholder="Re-type Password"
+                        onBlur={handleOnChange} />
+                    <br />
+                    <button className="btn btn-info mt-2 mb-2" type="submit">Register</button>
 
-                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} placeholder="Your password" />
 
-                            <br />
+                    <p className="text-white fw-bolder">Already have a account? Please <Link className="text-decoration-none text-info" to="/login">login</Link></p>
 
-                            <input name="password 2" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} placeholder="Re-type-password" />
+                </form>}
+            {isLoading && <div className="spinner-border text-info" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>}
+            {user?.email && <div className="alert alert-success" role="alert">
+                User created successFully!
+            </div>}
+            {authError && <div class="alert alert-danger" role="alert">
+                {authError}
+            </div>}
 
-                            {errors.exampleRequired && <span>This field is required</span>}
-                            <br />
 
-                            <input type="submit" value="Register" className="btn btn-info w-75" />
-                        </form>
-                        <div className="mt-4">
-                            <p className="text-white">Already Registered? Please <Link className="text-decoration-none text-info" to="/login">Login</Link></p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
         </div>
     );
 };

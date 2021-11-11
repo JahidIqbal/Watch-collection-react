@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import PlaceOrder from '../PlaceOrder/PlaceOrder';
 // import PlaceOrder from '../PlaceOrder/PlaceOrder';
 
 const ServiceDetails = () => {
@@ -32,7 +33,7 @@ const ServiceDetails = () => {
                     </div>
                 </div>
                 <div className="col-md-6">
-                    {/* <PlaceOrder></PlaceOrder> */}
+                    <PlaceOrder></PlaceOrder>
                 </div>
             </div>
 
