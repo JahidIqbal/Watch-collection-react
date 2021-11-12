@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, isLoading, authError } = useAuth();
+    const { user, loginUser, isLoading, signInWithGoogle, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory()
@@ -22,6 +22,11 @@ const Login = () => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
+    }
+
     return (
         <div className="container mt-4 bg-dark w-50">
             <h3 className="mt-5 text-center text-info fw-bolder ">Login Form</h3>
@@ -49,14 +54,15 @@ const Login = () => {
                 {user?.email && <div className="alert alert-success" role="alert">
                     User created successFully!
                 </div>}
-                {authError && <div class="alert alert-danger" role="alert">
+                {authError && <div className="alert alert-danger" role="alert">
                     {authError}
                 </div>}
 
                 <p className="text-white fw-bolder">New User? Please <Link className="text-decoration-none text-info" to="/register">Register</Link></p>
             </form>
 
-
+            <button className="btn btn-warning mt-4" onClick={handleGoogleSignIn}><i className="fa fa-google text-primary" ></i>  Login with Google
+            </button>
 
         </div>
     );

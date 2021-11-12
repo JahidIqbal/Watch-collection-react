@@ -10,6 +10,8 @@ import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Dashboard from './Components/Dashboard/Dashboard';
+
 
 
 
@@ -39,7 +41,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
           </Switch>
           <Footer></Footer>
         </Router>
