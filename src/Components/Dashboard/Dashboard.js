@@ -16,6 +16,7 @@ import AddProducts from '../AddProducts/AddProducts';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import MyOrders from '../MyOrders/MyOrders';
 import useAuth from '../../hooks/useAuth';
+import AdminRoute from '../AdminRoute/AdminRoute';
 
 // import ManageProducts from '../ManageProducts/ ManageProducts';
 
@@ -109,15 +110,17 @@ const Dashboard = () => {
                         <Route exact path={path}>
                             <DashboardHome></DashboardHome>
                         </Route>
-                        <Route path={`${path}/makeAdmin`}>
-                            <MakeAdmin></MakeAdmin>
-                        </Route>
                         <Route path={`${path}/seeorder`}>
                             <MyOrders></MyOrders>
                         </Route>
-                        <Route path={`${path}/addaproduct`}>
+
+                        <AdminRoute path={`${path}/makeadmin`}>
+                            <MakeAdmin></MakeAdmin>
+                        </AdminRoute>
+
+                        <AdminRoute path={`${path}/addaproduct`}>
                             <AddProducts></AddProducts>
-                        </Route>
+                        </AdminRoute>
                     </Switch>
 
                 </div>

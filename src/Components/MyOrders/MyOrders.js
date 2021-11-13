@@ -52,7 +52,7 @@ const MyOrders = () => {
                     {
                         myOrder?.map((pd) =>
 
-                            <tbody>
+                            <tbody key={pd._id}>
                                 <tr>
                                     <td>{pd?.name}</td>
                                     <td>{pd?.email}</td>
