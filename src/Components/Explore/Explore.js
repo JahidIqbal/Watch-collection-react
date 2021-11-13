@@ -5,7 +5,7 @@ import Mservice from '../Mservice/Mservice';
 const Explore = () => {
     const [moreServices, setMoreServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://glacial-temple-59647.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setMoreServices(data))
     }, [])

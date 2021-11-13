@@ -6,14 +6,14 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [myOrder, setMyOrder] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://glacial-temple-59647.herokuapp.com/orders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setMyOrder(data));
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://glacial-temple-59647.herokuapp.com/orders/${id}`;
         const isReady = window.confirm('are you sure you want to delete this order?');
         if (isReady) {
             fetch(url, {

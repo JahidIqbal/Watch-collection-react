@@ -7,7 +7,7 @@ const ServiceDetails = () => {
     let { id } = useParams();
     const [serviceDetails, setServiceDetails] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://glacial-temple-59647.herokuapp.com/services')
             .then(res => res.json())
             .then((data) => {
                 const foundService = data.filter(detail => detail._id == id)
