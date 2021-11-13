@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import PlaceOrder from '../PlaceOrder/PlaceOrder';
-// import PlaceOrder from '../PlaceOrder/PlaceOrder';
+
 
 const ServiceDetails = () => {
     let { id } = useParams();
@@ -14,6 +14,7 @@ const ServiceDetails = () => {
                 setServiceDetails(foundService);
             })
     }, [])
+
 
     const { name, description, image, price } = serviceDetails[0] || {}
     return (

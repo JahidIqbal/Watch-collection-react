@@ -11,6 +11,7 @@ import Register from './Components/Register/Register';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboard from './Components/Dashboard/Dashboard';
+// import PlusProductDetails from './Components/PlusProductDetails/PlusProductDetails';
 
 
 
@@ -32,6 +33,7 @@ function App() {
             <PrivateRoute path="/buynow/:id">
               <ServiceDetails></ServiceDetails>
             </PrivateRoute>
+
             <Route path="/explore">
               <Explore></Explore>
             </Route>

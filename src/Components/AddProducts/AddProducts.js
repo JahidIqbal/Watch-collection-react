@@ -8,7 +8,7 @@ const AddProducts = () => {
     const onSubmit = data => {
         console.log(data)
 
-        axios.post('http://localhost:5000/addproduct', data)
+        axios.post('http://localhost:5000/services', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -20,7 +20,7 @@ const AddProducts = () => {
     }
     return (
         <div className="container ">
-            <h1 className="mt-5 text-center  w-50 mx-auto text-dark">Add a Product</h1>
+            <h1 className="mt-5 text-center  w-50 mx-auto text-white">Add a Product</h1>
             <div className="login-box w-100">
                 <div className="border border d-flex justify-content-center align-items-center bg-light ">
                     <div className="login-form">
@@ -32,11 +32,11 @@ const AddProducts = () => {
                             />
                             <br />
 
-                            <input {...register("img", { required: true })}
+                            <input {...register("image", { required: true })}
                                 placeholder="image"
                                 className="p-2 m-2 w-100" />
                             <br />
-                            <textarea {...register("Description", { required: true })}
+                            <textarea {...register("description", { required: true })}
                                 placeholder="Description"
                                 className="p-2 m-2 w-100" />
                             <br />

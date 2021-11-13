@@ -22,6 +22,7 @@ const Navbar = () => {
                             <Link className="nav-link active text-white " to="/explore">Explore</Link>
                             <Link className="nav-link active text-white" to="/dashboard">Dashboard</Link>
 
+                            {user.email && <span style={{ color: 'white ', fontWeight: 'bold', backgroundColor: 'dark', marginTop: '10px' }}>Hello, {user.displayName}</span>}
 
                             {
                                 user?.email ?
