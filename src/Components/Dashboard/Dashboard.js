@@ -1,24 +1,17 @@
 import React from 'react';
 import './Dashboard.css'
 import brandicon from '../../images/watch.png'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams,
-    useRouteMatch
-} from "react-router-dom";
-import DashboardHome from '../DashboardHome/DashboardHome';
-// import MyOrders from '../MyOrders/MyOrders';
-// import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProducts from '../AddProducts/AddProducts';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import MyOrders from '../MyOrders/MyOrders';
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../AdminRoute/AdminRoute';
-
-// import ManageProducts from '../ManageProducts/ ManageProducts';
+import ManageProducts from '../ManageProducts/ManageProducts';
+import Review from '../Review/Review';
+import Payment from '../Payment/Payment';
 
 
 const Dashboard = () => {
@@ -34,46 +27,40 @@ const Dashboard = () => {
                     <br />
                     <div className="left-navigation">
                         <ul className="list">
-                            {/* 
                             <li>
-                                <Link to={`${url}/manageallorders`} className="nav-link text-white">Manage All orders</Link>
-                            </li>
-                            <li>
-                                <Link to={`${url}/addaproduct`} className="nav-link text-white">Add a Product</Link>
+                                <h2>DashBoard</h2>
                             </li>
 
                             <li>
-                                <Link to={`${url}/makeadmin`} className="nav-link text-white">Make Admin</Link>
+                                <Link to={`${url}/payment`} className="nav-link text-white">Payment</Link>
                             </li>
 
                             <li>
-                                <Link to={`${url}/manageproducts`} className="nav-link text-white">Manage Products</Link>
-                            </li>
-                            <li>Logout</li>
-                            <li>
-                                <Link to={`${url}`} className="nav-link text-white">Dashboard</Link>
+                                <Link to={`${url}/seeorder`} className="nav-link text-white">my orders</Link>
                             </li>
                             <li>
-                                <Link to={`${url}/myorders`} className="nav-link text-white">my orders</Link>
+                                <Link to={`${url}/review`} className="nav-link text-white">Review</Link>
                             </li>
 
-
-
-                            <li>Review</li>
-                            <li>Payment</li> */}
-
-                            {/* <Link to="/dashboard"> <button>Dashboard</button></Link> */}
-
-                            <Link to={`${url}`}> <button>Dashboard</button></Link>
                             {
-                                admin && <div>
-                                    <Link to={`${url}/makeadmin`}> <button>Make Admin</button></Link>
-                                    <Link to={`${url}/addaproduct`}> <button>Add a Product</button></Link>
-                                </div>
+                                admin &&
+                                <li>
+
+                                    <Link to={`${url}/makeadmin`} className="nav-link text-white">Make Admin</Link>
+
+                                    <Link to={`${url}/addaproduct`} className="nav-link text-white">Add a Product</Link>
+
+                                    <Link to={`${url}/manageallorders`} className="nav-link text-white">Manage All orders</Link>
+
+                                    <Link to={`${url}/manageproducts`} className="nav-link text-white">Manage Products</Link>
+                                </li>
+
                             }
 
-                            <Link to={`${url}/seeorder`}> <button>my orders</button></Link>
-                            <Link to={`${url}/review`} className="nav-link text-white">Review</Link>
+
+
+
+
 
                         </ul>
 
@@ -81,37 +68,18 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className="col-md-10 col-sm-8 main-content">
-                    {/* <Switch>
-                        <Route exact path={path}>
-                            <DashboardHome></DashboardHome>
-                        </Route>
-                        <Route path={`${path}/myorders`}>
-                            <MyOrders></MyOrders>
-                        </Route>
-                        <Route path={`${path}/manageallorders`}>
-                            <ManageAllOrders></ManageAllOrders>
-                        </Route>
-                        <Route path={`${path}/addaproduct`}>
-                            < AddProducts></AddProducts>
-                        </Route>
-                        <Route path={`${path}/makeadmin`}>
-                            < MakeAdmin></MakeAdmin>
-                        </Route>
-                        <Route path={`${path}/manageproducts`}>
-                            < ManageProducts></ManageProducts>
-                        </Route>
-
-                    </Switch> */}
-
-
-
 
                     <Switch>
-                        <Route exact path={path}>
-                            <DashboardHome></DashboardHome>
-                        </Route>
+
                         <Route path={`${path}/seeorder`}>
                             <MyOrders></MyOrders>
+                        </Route>
+
+                        <Route path={`${path}/review`}>
+                            <Review></Review>
+                        </Route>
+                        <Route path={`${path}/payment`}>
+                            <Payment></Payment>
                         </Route>
 
                         <AdminRoute path={`${path}/makeadmin`}>
@@ -120,6 +88,12 @@ const Dashboard = () => {
 
                         <AdminRoute path={`${path}/addaproduct`}>
                             <AddProducts></AddProducts>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageallorders`}>
+                            <ManageAllOrders></ManageAllOrders>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageproducts`}>
+                            <ManageProducts></ManageProducts>
                         </AdminRoute>
                     </Switch>
 
