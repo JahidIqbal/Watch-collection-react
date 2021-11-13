@@ -16,7 +16,7 @@ import Payment from '../Payment/Payment';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-    const { admin } = useAuth();
+    const { admin, logOut } = useAuth();
     return (
         <div>
             <div className="row">
@@ -57,10 +57,10 @@ const Dashboard = () => {
 
                             }
 
-
-
-
-
+                            <li>
+                                <Link to="" className="nav-link text-white">
+                                    <button className="btn btn-light" onClick={logOut}> Logout</button> </Link>
+                            </li>
 
                         </ul>
 

@@ -58,8 +58,7 @@ const MyOrders = () => {
                                     <td>{pd?.email}</td>
                                     <td>{pd?.Address}</td>
 
-                                    <td><button type="button" className="btn btn-info btn-sm mb-2" >Pending</button>
-
+                                    <td>
                                         <button onClick={() => handleDelete(pd._id)} className="btn btn-danger btn-sm mx-2">Delete</button>
 
                                     </td>
