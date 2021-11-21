@@ -72,8 +72,7 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className="col-md-10 col-sm-8 main-content">
-                    <h1 className="text-center text-white">Welcome to JI Watch
-                    </h1>
+
                     <Switch>
 
                         <Route path={`${path}/seeorder`}>

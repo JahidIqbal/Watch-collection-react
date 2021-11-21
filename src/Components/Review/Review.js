@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import './Review.css'
+import image from '../../images/review rating.jpg'
 import { useForm } from "react-hook-form";
 
 
@@ -22,8 +23,9 @@ const Review = () => {
         reset();
     }
     return (
-        <div className="container ">
-            <h1 className="mt-5 text-center  w-50 mx-auto text-white">Add a Product</h1>
+        <div >
+            <h1>Review</h1>
+            <img className="img-fluid" src={image} alt="" />
             <div className="login-box w-100">
                 <div className="border border d-flex justify-content-center align-items-center bg-light ">
                     <div className="login-form">
@@ -61,9 +63,7 @@ const Review = () => {
                             <br />
 
 
-
-
-                            <input type="submit" value="Add" className="btn btn-info w-25" />
+                            <input type="submit" value="Submit" className="btn btn-info w-50 mb-2" />
                         </form>
 
                     </div>

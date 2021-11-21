@@ -61,7 +61,7 @@ const Login = () => {
                 <p className="text-white fw-bolder">New User? Please <Link className="text-decoration-none text-info" to="/register">Register</Link></p>
             </form>
 
-            <button className="btn btn-warning mt-4" onClick={handleGoogleSignIn}><i className="fa fa-google text-primary" ></i>  Login with Google
+            <button className="btn-warning mt-4  rounded text-nowrap" onClick={handleGoogleSignIn}><i className="fab fa-google text-info"></i> Login with Google
             </button>
 
         </div>

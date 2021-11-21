@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import admin from '../../images/admin.jpg'
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -30,19 +31,24 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h3>admin here</h3>
+
+
+            <h3 className="text-dark fw-bolder ">ADMIN</h3>
             <form onSubmit={handleAdminSubmit}>
                 <input
                     sx={{ width: '50%' }}
                     label="Email"
                     type="email"
+                    placeholder="Email"
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <button type="submit" className="btn-info">Make Admin</button>
+                <button type="submit" className=" btn-info">Make Admin</button>
             </form>
             {success && <div className="alert alert-success" role="alert">
                 Admin created successFully!
             </div>}
+
+            <img className="img-fluid" src={admin} alt="" />
         </div>
     );
 };

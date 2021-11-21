@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
+import addproductimage from '../../images/add product.jpg'
 
 const AddProducts = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -19,8 +20,9 @@ const AddProducts = () => {
         reset();
     }
     return (
-        <div className="container ">
-            <h1 className="mt-5 text-center  w-50 mx-auto text-dark">Add a Product</h1>
+        <div>
+
+            <h3 className="text-dark fw-bolder ">ADD PRODUCT</h3>
             <div className="login-box w-100">
                 <div className="border border d-flex justify-content-center align-items-center bg-light ">
                     <div className="login-form">
@@ -46,15 +48,13 @@ const AddProducts = () => {
 
                             <br />
 
-
-
-
-                            <input type="submit" value="Add" className="btn btn-info w-25" />
+                            <input type="submit" value="Submit" className="btn btn-info w-50" />
                         </form>
 
                     </div>
                 </div>
             </div>
+            <img className="img-fluid" src={addproductimage} alt="" />
         </div>
     );
 };

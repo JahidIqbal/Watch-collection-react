@@ -8,6 +8,10 @@ const PlaceOrder = () => {
 
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
     const onSubmit = (data) => {
+        // my addon
+        data.status = 'pending';
+        console.log(data)
+
         const isReady = window.confirm('are you sure to add this order?');
         if (isReady) {
             fetch("https://glacial-temple-59647.herokuapp.com/orders", {

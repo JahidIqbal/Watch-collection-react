@@ -34,9 +34,10 @@ const MyOrders = () => {
 
 
 
+
     return (
 
-        <div className="container mb-4">
+        <div >
             <div>
                 <table className="table table-bordered "  >
                     <thead>
