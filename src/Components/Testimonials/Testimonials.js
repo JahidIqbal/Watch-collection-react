@@ -11,7 +11,7 @@ const Testimonials = () => {
             .then(data => setTestimonials(data));
     }, [])
     return (
-        // review part
+
         <div className=" mx-auto mt-5">
             <h2 className=" fw-bolder display-4  w-100 ">Our Loveable Customer </h2>
 
