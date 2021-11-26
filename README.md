@@ -9,21 +9,13 @@ This is a watch website.Any want can buy watch from here.Lots of collection of w
 https://ji-watch-collection.web.app/
 
 ```bash
-This is a user friendly website for all watch lover.
+This website allows a user to book any watch of their choice.
 ```
 
 ```bash
- A user friendly can book any watch of its choice.
+In My Orders, a user can see all of its orders and, if desired , can also delete them.
 ```
 
 ```bash
-A user see all orders in my orders and can also delete the order if it wants.
-```
-
-```bash
-Different User can add rating of its own
-```
-
-```bash
-A user can also add product in explore page.
+Different User can add rating of its own and this rating will show in the home page.
 ```
