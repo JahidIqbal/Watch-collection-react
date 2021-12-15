@@ -10,7 +10,7 @@ const Blog = () => {
             <section id="blog">
                 <div className="row">
                     <div className=" text-center">
-                        <h1 className=" fw-bolder display-3 w-100 "> Latest Blog Posts </h1>
+                        <h1 className=" fw-bolder display-3 "> Latest Blog Posts </h1>
                     </div>
                 </div>
 

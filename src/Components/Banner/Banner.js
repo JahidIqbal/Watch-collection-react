@@ -15,7 +15,7 @@ const Banner = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="10000" >
-                        <img src={banner1} className="d-block w-100" alt="..." />
+                        <img src={banner1} className="d-block w-100 " alt="..." />
                         <div className="carousel-caption ">
                             <h5 className="text-white ">It’s your time</h5>
                             <p className="text-white">Because times are changing.</p>

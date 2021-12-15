@@ -16,3 +16,13 @@
   .carousel-indicators .active{
     background-color: #f00;
 }
+
+
+/*  */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
