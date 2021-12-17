@@ -7,15 +7,12 @@
     width: 100%;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0,0.05);
+    
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-}
+
+
 
 
 
@@ -33,15 +30,8 @@ body {
 .card:hover {
   transform:scale(1.1);
 }
-.card_red, .card_red .title .fa {
-  background: linear-gradient(-45deg, #ffec61, #f321d7);
-}
-.card_violet, .card_violet .title .fa  {
-  background: linear-gradient(-45deg, #f403d1, #64b5f6);
-}
-.card_three, .card_three .title .fa  {
-  background: linear-gradient(-45deg, #24ff72, #9a4eff);
-}
+
+
 
 .card:before {
   content: '';
