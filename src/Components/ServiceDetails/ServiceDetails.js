@@ -20,7 +20,7 @@ const ServiceDetails = () => {
     return (
         <div className="container mt-4  ">
             <div className="row justify-content-center align-items-center ">
-                <div className=" col-md-6">
+                <div className=" col-md-4">
                     <div className="card h-100 shadow-lg">
                         <img src={image} className="card-img-top " alt="..." />
                         <div className="card-body">
@@ -33,7 +33,7 @@ const ServiceDetails = () => {
 
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-8">
                     <PlaceOrder></PlaceOrder>
                 </div>
             </div>
