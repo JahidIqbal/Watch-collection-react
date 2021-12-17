@@ -14,7 +14,7 @@ const Mservice = (props) => {
                         <p className="card-text"> <strong>Description:</strong> {description}</p>
                         <p className="text-nowrap"><strong >Price:</strong>{price}</p>
                         <Link to={`/buynow/${_id}`}>
-                            <button className="btn btn-light"><img src={brandicon} alt="" width="25" />
+                            <button className="btn btn-dark"><img src={brandicon} alt="" width="25" />
                                 Buy now</button>
                         </Link>
                     </div>
