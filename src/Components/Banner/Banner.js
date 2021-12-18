@@ -15,24 +15,25 @@ const Banner = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="10000" >
-                        <img src={banner1} className="d-block w-100 " alt="..." />
+                        <img src={banner3} className="d-block w-100 " alt="..." />
                         <div className="carousel-caption ">
-                            <h5 className="text-white ">It’s your time</h5>
-                            <p className="text-white">Because times are changing.</p>
+
+
+                            <p className="text-white"> <em>Grab the best Collection !!</em></p>
                         </div>
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
                         <img src={banner2} className="d-block w-100" alt="..." />
                         <div className="carousel-caption ">
-                            <h5 className="text-white">The right time for life</h5>
-                            <p className="text-white">The art of being unique.</p>
+
+                            <p className="text-white"> <em>The art of being unique !!</em></p>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={banner3} className="d-block w-100" alt="..." />
+                        <img src={banner1} className="d-block w-100" alt="..." />
                         <div className="carousel-caption ">
-                            <h5 className="text-white">Time to Evolve</h5>
-                            <p className="text-white" >Watching with watches.</p>
+
+                            <p className="text-white" > <em>Take your style to next level!!</em></p>
                         </div>
                     </div>
                 </div>
@@ -45,9 +46,13 @@ const Banner = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
 
 
+
+
+
+
+        </div >
     );
 };
 

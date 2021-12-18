@@ -14,15 +14,45 @@
   }
 
   .carousel-indicators .active{
-    background-color: #f00;
+    background-color: white;
 }
 
 
-/*  */
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+ @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+} 
+
+
+/* animation */
+
+.carousel-caption {
+  font-weight: 700;
+  text-align: center;
+  font-size: 2vw;
+  
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgb(216, 204, 204), #fff, rgb(211, 199, 199));
+  letter-spacing: 5px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 4s linear ;
+
 }
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
+}
+
 
