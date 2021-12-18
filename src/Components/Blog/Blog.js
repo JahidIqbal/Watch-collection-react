@@ -8,40 +8,6 @@ const Blog = () => {
     return (
         <div classNameName="mt-4">
 
-            {/* <div classNameName="row">
-                    <div classNameName=" text-center">
-                        <h1 classNameName=" fw-bolder display-3 "> Latest Blog Posts </h1>
-                    </div>
-                </div>
-
-                <div classNameName="row">
-                    <div classNameName="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="fade-right">
-                        <div classNameName="blog column text-center ">
-                            <img src={blog1} alt="" width="100%" />
-                            <h4 classNameName="text-white">5 Preparations You Should Make Before Using Watch</h4>
-                            <p classNameName="text-white font-italic">Watches are highly desirable fashion accessories and utilities and are treated as essential wardrobe items as well.</p>
-                            <Link classNameName="text-decoration-none text-white fw-bolder" to="">Read More <i classNameName="fab fa-readme"></i></Link>
-                        </div>
-                    </div>
-
-                    <div classNameName="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="fade-up">
-                        <div classNameName="blog column text-center">
-                            <img src={blog2} alt="" width="100%" />
-                            <h4 classNameName="text-white">Five Great Lessons You Can Learn From Watch</h4>
-                            <p classNameName="text-white font-italic">Everyone looks at your watch and it represents who you are, your values and your personal style.</p>
-                            <Link classNameName="text-decoration-none text-white fw-bolder" to="">Read More <i classNameName="fab fa-readme"></i></Link>
-                        </div>
-                    </div>
-
-                    <div classNameName="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="fade-left">
-                        <div classNameName="blog column text-center">
-                            <img src={blog3} alt="" width="100%" />
-                            <h4 classNameName="text-white">7 Questions About Watch You Should Answer Truthfully</h4>
-                            <p classNameName="text-white font-italic">Our judgments, like our watches, none go just alike, yet each believes his own.</p>
-                            <Link classNameName="text-decoration-none text-white fw-bolder" to="">Read More <i classNameName="fab fa-readme"></i></Link>
-                        </div>
-                    </div>
-                </div> */}
 
 
             <section className="blog" data-scroll-index="4">
@@ -49,7 +15,7 @@ const Blog = () => {
 
                     <div className="blog-head text-center">
                         <h2>Blog</h2>
-                        <h6>latest news</h6>
+                        <h6>latest Posts</h6>
                     </div>
 
 
