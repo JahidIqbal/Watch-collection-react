@@ -18,6 +18,9 @@ const Service = (props) => {
                             <button className="btn btn-dark"><img src={brandicon} alt="" width="25" />
                                 Buy now</button>
                         </Link>
+
+
+
                     </div>
 
                 </div>
