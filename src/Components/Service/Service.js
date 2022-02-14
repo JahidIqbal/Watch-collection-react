@@ -6,7 +6,7 @@ import brandicon from '../../images/watch.png'
 const Service = (props) => {
     const { name, image, description, price, _id } = props.service;
     return (
-        <div>
+        <div data-aos="flip-right">
             <div className="col">
                 <div className="card h-100 shadow-lg" >
                     <img src={image} className="card-img-top" width="500" height="500" alt="..." />

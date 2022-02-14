@@ -13,9 +13,14 @@ h1 {
 }
 
 .blog {
-	background-color:black;
-	padding:40px 0px;
-    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: none;
+    box-sizing: border-box;
+    background-color: #fafafa;
 }
 
 .blog .blog-column a{
