@@ -12,6 +12,7 @@ const Home = () => {
             <Services></Services>
             <Testimonials></Testimonials>
             <Blog></Blog>
+            {/* <Star></Star> */}
         </div>
     );
 };

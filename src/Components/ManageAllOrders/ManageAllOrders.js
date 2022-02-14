@@ -64,9 +64,6 @@ const ManageAllOrders = () => {
 
                         }
 
-
-
-
                     </table>
 
                 </div>

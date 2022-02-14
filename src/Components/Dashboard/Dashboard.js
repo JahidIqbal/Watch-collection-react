@@ -71,8 +71,8 @@ const Dashboard = () => {
 
                     </div>
                 </div>
-                <div className="col-md-10 col-sm-8 main-content">
 
+                <div className="col-md-10 col-sm-8 main-content">
                     <Switch>
 
                         <Route path={`${path}/seeorder`}>
