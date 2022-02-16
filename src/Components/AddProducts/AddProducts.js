@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
-import addproductimage from '../../images/add product.jpg'
+
 
 const AddProducts = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, } = useForm();
 
     const onSubmit = data => {
         console.log(data)
@@ -20,11 +20,11 @@ const AddProducts = () => {
         reset();
     }
     return (
-        <div>
+        <div style={{ background: `linear-gradient(to right, #606c88, #3f4c6b)` }}>
 
-            <h3 className="text-dark fw-bolder ">ADD PRODUCT</h3>
-            <div className="login-box w-100">
-                <div className="border border d-flex justify-content-center align-items-center bg-light ">
+            <h3 className="text-light fw-bolder ">ADD PRODUCT</h3>
+            <div className="login-box w-50 justify-content-center mx-auto">
+                <div className="border border d-flex justify-content-center align-items-center bg-dark ">
                     <div className="login-form">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input
@@ -54,7 +54,8 @@ const AddProducts = () => {
                     </div>
                 </div>
             </div>
-            <img className="img-fluid" src={addproductimage} alt="" />
+
+
         </div>
     );
 };

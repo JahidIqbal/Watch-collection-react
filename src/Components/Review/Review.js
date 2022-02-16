@@ -23,10 +23,9 @@ const Review = () => {
         reset();
     }
     return (
-        <div >
+        <div className='re'>
             <h1>Review</h1>
-            <img className="img-fluid" src={image} alt="" />
-            <div className="login-box w-100">
+            <div className="login-box w-100" style={{ width: '50%' }}>
                 <div className="border border d-flex justify-content-center align-items-center bg-light ">
                     <div className="login-form">
                         <form onSubmit={handleSubmit(onSubmit)}>

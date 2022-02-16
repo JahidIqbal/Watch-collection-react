@@ -1,6 +1,5 @@
 import React from 'react';
 import './Dashboard.css'
-import brandicon from '../../images/watch.png'
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
@@ -12,6 +11,7 @@ import AdminRoute from '../AdminRoute/AdminRoute';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import Review from '../Review/Review';
 import Payment from '../Payment/Payment';
+import DashboardHome from '../DashboardHome/DashboardHome';
 
 
 const Dashboard = () => {
@@ -21,9 +21,7 @@ const Dashboard = () => {
         <div>
             <div className="row">
                 <div className="col-md-2 col-sm-4 sidebar1">
-                    <div className="logo">
-                        <img src={brandicon} alt="" width="50" />
-                    </div>
+
                     <br />
                     <div className="left-navigation">
                         <ul className="list">
@@ -32,11 +30,18 @@ const Dashboard = () => {
                                 <li>
                                     <h2>DashBoard</h2>
 
-                                    <Link to={`${url}/payment`} className="nav-link text-white">Payment</Link>
+                                    <button className=" btn-light rounded-pill border-0 mt-2 w-50">
+                                        <Link to={`${url}/payment`} className="nav-link text-black">Payment</Link>
+                                    </button>
 
-                                    <Link to={`${url}/seeorder`} className="nav-link text-white">my orders</Link>
+                                    <br />
+                                    <button className=" btn-light rounded-pill border-0 mt-2 w-50">
+                                        <Link to={`${url}/seeorder`} className="nav-link text-black">my orders</Link></button>
 
-                                    <Link to={`${url}/review`} className="nav-link text-white">Review</Link>
+                                    <br />
+                                    <button className=" btn-light rounded-pill border-0 mt-2 w-50">
+                                        <Link to={`${url}/review`} className="nav-link text-black">Review</Link>
+                                    </button>
                                 </li>
                             }
 
@@ -51,17 +56,28 @@ const Dashboard = () => {
                                 admin &&
                                 <li>
                                     <h2>DashBoard</h2>
+                                    <button className=" btn-light rounded-pill border-0 mt-2 w-75">
+                                        <Link to={`${url}/makeadmin`} className="nav-link text-black text-nowrap text-center">Make Admin</Link>
+                                    </button>
 
-                                    <Link to={`${url}/makeadmin`} className="nav-link text-white">Make Admin</Link>
+                                    <br />
 
-                                    <Link to={`${url}/addaproduct`} className="nav-link text-white">Add a Product</Link>
+                                    <button className=" btn-light rounded-pill border-0 mt-2 w-75">
+                                        <Link to={`${url}/addaproduct`} className="nav-link text-black text-nowrap text-center">Add a Product</Link>
+                                    </button>
 
-                                    <Link to={`${url}/manageallorders`} className="nav-link text-white">Manage All orders</Link>
+                                    <br />
 
-                                    <Link to={`${url}/manageproducts`} className="nav-link text-white">Manage Products</Link>
+                                    <button className=" btn-light rounded-pill border-0 mt-2 w-75">
+                                        <Link to={`${url}/manageallorders`} className="nav-link text-black text-nowrap text-center">Manage All orders</Link>
+                                    </button>
+                                    <br />
 
-                                    <Link to="" className="nav-link text-white">
-                                        <button className="btn btn-light" onClick={logOut}> Logout</button> </Link>
+                                    <button className=" btn-light rounded-pill border-0 mt-2 w-75">
+                                        <Link to={`${url}/manageproducts`} className="nav-link text-black text-nowrap ">Manage Products</Link>
+                                    </button>
+
+
                                 </li>
 
                             }
@@ -74,6 +90,9 @@ const Dashboard = () => {
 
                 <div className="col-md-10 col-sm-8 main-content">
                     <Switch>
+                        <Route exact path={`${path}/`}>
+                            <DashboardHome />
+                        </Route>
 
                         <Route path={`${path}/seeorder`}>
                             <MyOrders></MyOrders>

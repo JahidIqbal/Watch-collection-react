@@ -12,21 +12,28 @@ const Explore = () => {
 
 
     return (
-        <div className=" mx-auto mt-5">
+        <div className=" mx-auto mb-5" >
             <h2 className=" fw-bolder display-4 w-100 ">Explore more Watch Products</h2>
 
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            {
+                moreServices.length === 0 ?
+                    <div className="spinner-border text-dark text-center" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
 
-                {
-                    moreServices.map(mservice => <Mservice key={mservice._id} mservice={mservice}></Mservice>)
+                    :
+                    <div className="row row-cols-1 row-cols-md-3 g-4">
 
-                }
+                        {
+                            moreServices.map(mservice => <Mservice key={mservice._id} mservice={mservice}></Mservice>)
+
+                        }
 
 
 
 
-            </div>
-            {/* adding new product */}
+                    </div>
+            }
 
 
         </div>

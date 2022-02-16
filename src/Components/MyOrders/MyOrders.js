@@ -37,8 +37,9 @@ const MyOrders = () => {
 
     return (
 
-        <div >
-            <div>
+        <div className='tab'>
+
+            <div >
                 <table className="table table-bordered "  >
                     <thead>
                         <tr>

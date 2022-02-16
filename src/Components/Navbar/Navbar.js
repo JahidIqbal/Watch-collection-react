@@ -1,39 +1,59 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './Navbar.css';
 import brandicon from '../../images/watch.png'
+
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
-                <div className="container-fluid ">
-                    <Link className="navbar-brand h5 text-white" to="/icon">JIWatch <img src={brandicon} alt="" width="50" />
 
-                    </Link>
-
-                    <button className="navbar-toggler btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className=" btn-light navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-sm navbar-dark navbar-custom" >
+                <div className="container-fluid bg-dark">
+                    <NavLink to="/" className="navbar-brand h5 text-white">JI Watch <img src={brandicon} alt="" width="50" /> </NavLink>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                        <div className="navbar-nav ">
-                            <Link className="nav-link active text-white" aria-current="page" to="/">Home</Link>
-                            <Link className="nav-link active text-white " to="/explore">Explore</Link>
-                            <Link className="nav-link active text-white" to="/dashboard">Dashboard</Link>
+                    <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul className="navbar-nav ">
+                            <li className="nav-item">
+                                <NavLink to="/home" className="nav-link text-white">Home</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink to="/explore" className="nav-link text-white">Explore</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink to="/dashboard" className="nav-link text-white">Dashboard</NavLink>
+                            </li>
 
-                            {user.email && <span style={{ color: 'white ', fontWeight: 'bold', backgroundColor: 'dark', marginTop: '10px' }}>Hello, {user.displayName}</span>}
+                            <li className="nav-item">
+                                <span className="nav-link text-white">{user.email && <li className="nav-item">
+                                    <p>{user.displayName}</p>
+                                </li>}</span>
+                            </li>
+                            <li className="nav-item">
+                                <span className="nav-link text-white">{user.email && <li className="nav-item">
+                                    <img className='user' src={user.photoURL} alt="" />
+                                </li>}</span>
+                            </li>
+                            <li className="nav-item">
+                                <li className="nav-link text-white">{
+                                    user.email ? <li>
+                                        <li className="nav-item">
+                                            <button onClick={logOut} type="button" className="btn btn-sm btn-light">Logout</button>
+                                        </li>
+                                    </li>
+                                        :
+                                        <NavLink to="/login" className="nav-item">
+                                            <button type="button" className="btn btn-sm btn-light">Login</button>
+                                        </NavLink>
 
-                            {
-                                user?.email ?
-                                    <NavLink to="" className="nav-link text-white">
-                                        <button className="btn btn-info" onClick={logOut}> Logout</button> </NavLink>
-                                    :
-                                    <NavLink to="/login" className="nav-link ">
-                                        <button className="btn btn-light fw-bolder"> Login</button> </NavLink>
-                            }
+                                }</li>
+                            </li>
 
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </nav>
