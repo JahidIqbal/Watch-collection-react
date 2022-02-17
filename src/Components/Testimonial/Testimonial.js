@@ -7,7 +7,7 @@ const Testimonial = (props) => {
     return (
         <div>
             <div>
-                <img src={image} alt="" />
+                <img src={image} width="200" height="200" alt="..." />
                 <div className="myCarousel">
                     <h3>{name}</h3>
                     <h4>Customer</h4>

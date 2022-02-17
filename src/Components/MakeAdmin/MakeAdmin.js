@@ -30,12 +30,13 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <div>
+        <div style={{ background: `linear-gradient(to right, #606c88, #3f4c6b)` }}>
 
 
             <h3 className="text-dark fw-bolder ">ADMIN</h3>
             <form onSubmit={handleAdminSubmit}>
                 <input
+                    className='border border-light'
                     sx={{ width: '50%' }}
                     label="Email"
                     type="email"
@@ -48,7 +49,7 @@ const MakeAdmin = () => {
                 Admin created successFully!
             </div>}
 
-            <img className="img-fluid" src={admin} alt="" />
+            <img className="img-fluid" src={admin} alt="" style={{ background: `linear-gradient(to right, #606c88, #3f4c6b)` }} />
         </div>
     );
 };

@@ -37,10 +37,10 @@ const MyOrders = () => {
 
     return (
 
-        <div className='tab'>
+        <div className='tab' style={{ background: `linear-gradient(to right, #606c88, #3f4c6b)` }}>
 
             <div >
-                <table className="table table-bordered "  >
+                <table className="table table-borderless  text-white "  >
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
@@ -61,10 +61,9 @@ const MyOrders = () => {
                                     <td>{pd?.Address}</td>
 
                                     <td>
-                                        <button onClick={() => handleDelete(pd._id)} className="btn btn-danger btn-sm mx-2">Delete</button>
+                                        <button onClick={() => handleDelete(pd._id)} className="btn btn-danger btn-sm mx-2"><i className="fas fa-trash text-danger"></i></button>
 
                                     </td>
-
 
                                 </tr>
                             </tbody>

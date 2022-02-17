@@ -31,7 +31,7 @@ const Services = () => {
                     <div className="row row-cols-1 row-cols-md-3 g-4">
 
                         {
-                            services.slice(0, 6).map(service => <Service key={service._id} service={service}></Service>)
+                            services.slice(0, 9).map(service => <Service key={service._id} service={service}></Service>)
                         }
 
 

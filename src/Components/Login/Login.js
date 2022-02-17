@@ -28,7 +28,10 @@ const Login = () => {
     }
 
     return (
-        <div className="container mt-4 bg-dark w-50">
+        <div className="container mt-4 bg-dark w-50" style={{ background: `linear-gradient(to right, #e6dada, #274046)` }}>
+            {isLoading && <div className="spinner-border text-info text-center" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>}
             <h3 className="mt-5 text-center text-info fw-bolder ">Login Form</h3>
             <form onSubmit={handleLoginSubmit}>
                 <input
@@ -48,9 +51,7 @@ const Login = () => {
                     onBlur={handleOnChange} />
                 <br />
                 <button className="btn btn-info mt-2 mb-2" type="submit">Login</button>
-                {isLoading && <div className="spinner-border text-info text-center" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>}
+
                 {user?.email && <div className="alert alert-success" role="alert">
                     User created successFully!
                 </div>}
@@ -61,7 +62,7 @@ const Login = () => {
                 <p className="text-white fw-bolder">New User? Please <Link className="text-decoration-none text-info" to="/register">Register</Link></p>
             </form>
 
-            <button className="btn-warning mt-4  rounded text-nowrap" onClick={handleGoogleSignIn}><i className="fab fa-google text-info"></i> Login with Google
+            <button className="btn-dark border-0 px-3  rounded text-nowrap" onClick={handleGoogleSignIn}><i className="fab fa-google text-info" ></i> Login with Google
             </button>
 
         </div>

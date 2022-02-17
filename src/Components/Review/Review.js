@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import './Review.css'
-import image from '../../images/review rating.jpg'
 import { useForm } from "react-hook-form";
 
 
@@ -23,10 +22,10 @@ const Review = () => {
         reset();
     }
     return (
-        <div className='re'>
-            <h1>Review</h1>
-            <div className="login-box w-100" style={{ width: '50%' }}>
-                <div className="border border d-flex justify-content-center align-items-center bg-light ">
+        <div className='re' style={{ background: `linear-gradient(to right, #606c88, #3f4c6b)` }}>
+            <h1 className='text-white'>Review</h1>
+            <div className="login-box w-50 justify-content-center mx-auto" style={{ width: '50%' }}>
+                <div className="border border d-flex justify-content-center align-items-center bg-dark ">
                     <div className="login-form">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input

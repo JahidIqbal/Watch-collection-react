@@ -27,12 +27,12 @@ const ManageAllOrders = () => {
 
 
     return (
-        <div>
-            <div className="container mb-4">
+        <div style={{ background: `linear-gradient(to right, #606c88, #3f4c6b)` }}>
+            <div className="container mb-4 ">
                 <div>
-                    <table className="table table-bordered "  >
+                    <table className="table table-borderless text-white"  >
                         <thead>
-                            <tr>
+                            <tr className='border'>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Address</th>

@@ -25,7 +25,7 @@ const Register = () => {
         e.preventDefault();
     }
     return (
-        <div className="container mt-4 bg-dark w-50">
+        <div className="container mt-4 bg-dark w-50" style={{ background: `linear-gradient(to right, #4b6cb7, #182848)` }}>
             <h3 className="mt-5 text-center text-info fw-bolder ">Register Form</h3>
             {
                 !isLoading && <form onSubmit={handleLoginSubmit}>

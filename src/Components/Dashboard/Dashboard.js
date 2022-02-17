@@ -10,15 +10,14 @@ import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import Review from '../Review/Review';
-import Payment from '../Payment/Payment';
 import DashboardHome from '../DashboardHome/DashboardHome';
 
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-    const { admin, logOut } = useAuth();
+    const { admin } = useAuth();
     return (
-        <div>
+        <div style={{ background: `linear-gradient(to right, #70e1f5, #ffd194) ` }}>
             <div className="row">
                 <div className="col-md-2 col-sm-4 sidebar1">
 
@@ -30,9 +29,9 @@ const Dashboard = () => {
                                 <li>
                                     <h2>DashBoard</h2>
 
-                                    <button className=" btn-light rounded-pill border-0 mt-2 w-50">
+                                    {/* <button className=" btn-light rounded-pill border-0 mt-2 w-50">
                                         <Link to={`${url}/payment`} className="nav-link text-black">Payment</Link>
-                                    </button>
+                                    </button> */}
 
                                     <br />
                                     <button className=" btn-light rounded-pill border-0 mt-2 w-50">
@@ -101,9 +100,9 @@ const Dashboard = () => {
                         <Route path={`${path}/review`}>
                             <Review></Review>
                         </Route>
-                        <Route path={`${path}/payment`}>
+                        {/* <Route path={`${path}/payment`}>
                             <Payment></Payment>
-                        </Route>
+                        </Route> */}
 
                         <AdminRoute path={`${path}/makeadmin`}>
                             <MakeAdmin></MakeAdmin>

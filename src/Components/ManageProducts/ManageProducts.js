@@ -29,11 +29,11 @@ const ManageProducts = () => {
     }
 
     return (
-        <div className=" ">
+        <div style={{ background: `linear-gradient(to right, #606c88, #3f4c6b)` }}>
             <div>
-                <table className="table table-bordered "  >
+                <table className="table table-borderless text-white"  >
                     <thead>
-                        <tr>
+                        <tr className='border'>
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Action</th>
@@ -50,7 +50,8 @@ const ManageProducts = () => {
                                     <td>{pd?.price}</td>
 
                                     <td>
-                                        <button onClick={() => handleRemove(pd._id)} className="btn btn-danger btn-sm mx-2">Remove</button>
+
+                                        <button onClick={() => handleRemove(pd._id)} className="btn"><i className="fas fa-trash text-danger"></i></button>
 
                                     </td>
 

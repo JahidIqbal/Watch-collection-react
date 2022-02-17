@@ -56,10 +56,10 @@ const Footer = () => {
                     <p>Stay Connected with our social Networks</p>
                     <div className="col-md-12 text-center">
                         <Link className="text-white mx-2" to=" "><i className="fab fa-facebook-f white-text mx-2"> </i></Link>
-                        <Link to=" "><i className="fab fa-twitter text-white mx-2"> </i></Link>
-                        <Link to=" "><i className="fab fa-google-plus-g text-white mx-2"> </i></Link>
-                        <Link to=" "><i className="fab fa-linkedin-in text-white mx-2"> </i></Link>
-                        <Link to=" "><i className="fab fa-instagram text-white mx-2 "> </i></Link>
+                        <Link to="/"><i className="fab fa-twitter text-white mx-2"> </i></Link>
+                        <Link to="/"><i className="fab fa-google-plus-g text-white mx-2"> </i></Link>
+                        <Link to="/"><i className="fab fa-linkedin-in text-white mx-2"> </i></Link>
+                        <Link to="/"><i className="fab fa-instagram text-white mx-2 "> </i></Link>
                     </div>
                 </div>
             </footer>
