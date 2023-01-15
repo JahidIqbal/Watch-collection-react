@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 
+//products
 const AddProducts = () => {
   const { register, handleSubmit, reset } = useForm();
 
