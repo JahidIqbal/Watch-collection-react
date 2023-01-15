@@ -17,7 +17,7 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
     const { admin } = useAuth();
     return (
-        <div style={{ background: `linear-gradient(to right, #70e1f5, #ffd194) ` }}>
+        <div className='bg-dark'>
             <div className="row">
                 <div className="col-md-2 col-sm-4 sidebar1">
 
