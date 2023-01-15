@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 const ManageProducts = () => {
   const [manageProducts, setManageProducts] = useState([]);
   useEffect(() => {
-    fetch("https://watch-server-pied.vercel.app/manageProducts")
+    fetch("https://watch-collection-server.vercel.app/manageProducts")
       .then((res) => res.json())
       .then((data) => setManageProducts(data));
   }, []);
 
   const handleRemove = (id) => {
-    const url = `https://watch-server-pied.vercel.app/manageProducts/${id}`;
+    const url = `https://watch-collection-server.vercel.app/manageProducts/${id}`;
     const isReady = window.confirm(
       "are you sure you want to delete this order?"
     );

@@ -10,7 +10,7 @@ const AddProducts = () => {
     console.log(data);
 
     axios
-      .post("https://watch-server-pied.vercel.app/services", data)
+      .post("https://watch-collection-server.vercel.app/services", data)
       .then((res) => {
         console.log(res);
         if (res.data.insertedId) {

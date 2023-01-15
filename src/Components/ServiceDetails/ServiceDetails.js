@@ -6,7 +6,7 @@ const ServiceDetails = () => {
   let { id } = useParams();
   const [serviceDetails, setServiceDetails] = useState([]);
   useEffect(() => {
-    fetch("https://watch-server-pied.vercel.app/services")
+    fetch("https://watch-collection-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         const foundService = data.filter((detail) => detail._id == id);

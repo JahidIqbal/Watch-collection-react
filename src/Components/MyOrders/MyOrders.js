@@ -6,14 +6,14 @@ const MyOrders = () => {
   const { user } = useAuth();
   const [myOrder, setMyOrder] = useState([]);
   useEffect(() => {
-    const url = `https://watch-server-pied.vercel.app/orders?email=${user.email}`;
+    const url = `https://watch-collection-server.vercel.app/orders?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyOrder(data));
   }, []);
 
   const handleDelete = (id) => {
-    const url = `https://watch-server-pied.vercel.app/orders/${id}`;
+    const url = `https://watch-collection-server.vercel.app/orders/${id}`;
     const isReady = window.confirm(
       "are you sure you want to delete this order?"
     );

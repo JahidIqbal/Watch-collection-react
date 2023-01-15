@@ -11,7 +11,7 @@ const Review = () => {
     console.log(data);
 
     axios
-      .post("https://watch-server-pied.vercel.app/ratings", data)
+      .post("https://watch-collection-server.vercel.app/ratings", data)
       .then((res) => {
         console.log(res);
         if (res.data.insertedId) {

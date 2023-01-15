@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   useEffect(() => {
-    fetch("https://watch-server-pied.vercel.app/ratings")
+    fetch("https://watch-collection-server.vercel.app/ratings")
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, []);
