@@ -4,7 +4,7 @@ import Mservice from "../Mservice/Mservice";
 const Explore = () => {
   const [moreServices, setMoreServices] = useState([]);
   useEffect(() => {
-    fetch("https://watch-collection-server.vercel.app/services")
+    fetch("https://watch-server.onrender.com/services")
       .then((res) => res.json())
       .then((data) => setMoreServices(data));
   }, []);

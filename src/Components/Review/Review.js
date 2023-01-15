@@ -9,9 +9,8 @@ const Review = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-
     axios
-      .post("https://watch-collection-server.vercel.app/ratings", data)
+      .post("https://watch-server.onrender.com/ratings", data)
       .then((res) => {
         console.log(res);
         if (res.data.insertedId) {

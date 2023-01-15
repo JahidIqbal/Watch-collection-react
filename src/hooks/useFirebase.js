@@ -72,7 +72,7 @@ const useFirebase = () => {
   }, [auth]);
   // admin useEffect
   useEffect(() => {
-    fetch(`https://watch-collection-server.vercel.app/users/${user.email}`)
+    fetch(`https://watch-server.onrender.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -107,7 +107,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://watch-collection-server.vercel.app/users", {
+    fetch("https://watch-server.onrender.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

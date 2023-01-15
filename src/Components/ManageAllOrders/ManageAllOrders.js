@@ -4,14 +4,14 @@ const ManageAllOrders = () => {
   const [status, setStatus] = useState([]);
   const [manageOrders, setManageOrders] = useState([]);
   useEffect(() => {
-    fetch("https://watch-collection-server.vercel.app/manageAllOrders")
+    fetch("https://watch-server.onrender.com/manageAllOrders")
       .then((res) => res.json())
       .then((data) => setManageOrders(data));
   }, []);
   const handleStatus = (_id, pd) => {
     pd.status = "shipped";
 
-    fetch(`https://watch-collection-server.vercel.app/manageAllOrders/${_id}`, {
+    fetch(`https://watch-server.onrender.com/manageAllOrders/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(pd),

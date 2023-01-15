@@ -4,7 +4,7 @@ import Service from "../Service/Service";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://watch-collection-server.vercel.app/services")
+    fetch("https://watch-server.onrender.com/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

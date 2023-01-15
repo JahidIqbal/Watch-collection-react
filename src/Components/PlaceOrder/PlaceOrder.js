@@ -20,7 +20,7 @@ const PlaceOrder = () => {
 
     const isReady = window.confirm("are you sure to add this order?");
     if (isReady) {
-      fetch("https://watch-collection-server.vercel.app/orders", {
+      fetch("https://watch-server.onrender.com/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -11,7 +11,7 @@ const MakeAdmin = () => {
 
   const handleAdminSubmit = (e) => {
     const user = { email };
-    fetch("https://watch-collection-server.vercel.app/users/admin", {
+    fetch("https://watch-server.onrender.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
